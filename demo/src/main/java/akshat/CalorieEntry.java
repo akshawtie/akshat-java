@@ -8,8 +8,7 @@ public class CalorieEntry {
     private final double protein;
     private final double fats;
     private final double totalCalories;
-
-    public CalorieEntry(String name, double carbs, double protein, double fats, double totalCalories) {
+    public CalorieEntry(String name,double carbs,double protein,double fats,double totalCalories) {
         this.date = LocalDate.now().toString();
         this.name = name;
         this.carbs = carbs;

@@ -19,7 +19,6 @@ public class Main {
             double fats = scanner.nextDouble();
             double totalCalories = (carbs * 4) + (protein * 4) + (fats * 9);
 
-
             // the magic happens here.
 
             CalorieEntry entry = new CalorieEntry(name, carbs, protein, fats, totalCalories);
