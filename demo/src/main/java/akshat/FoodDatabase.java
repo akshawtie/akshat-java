@@ -1,3 +1,6 @@
+package akshat;
+import java.io.IOException;
+import java.util.Scanner;
 import java.util.List;
 
 public class FoodDatabase {
@@ -24,4 +27,4 @@ public class FoodDatabase {
         public double fat;
         public double fiber;
     }
-}f
+}

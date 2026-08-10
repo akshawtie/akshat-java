@@ -14,5 +14,13 @@
   "protein": 489.00,
   "fats": 77.00,
   "totalCalories": 4505.00
+},
+{
+  "date": "2026-08-10",
+  "name": "akshat",
+  "carbs": 45.00,
+  "protein": 789.00,
+  "fats": 78.00,
+  "totalCalories": 4038.00
 }
 ]

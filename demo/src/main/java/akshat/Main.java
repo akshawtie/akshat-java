@@ -29,7 +29,6 @@ public class Main {
 
 
             ///lab 2
-            ///written by ai 
             System.out.print("Do you want to see previous history? (yes/no): ");
             String answer = scanner.next().trim().toLowerCase();
 
@@ -55,6 +54,8 @@ public class Main {
             }
         } catch (IOException e) {
             System.out.println("Failed to write calorie log: " + e.getMessage());
+        } catch (CalorieLogException e) {
+            System.out.println("Failed to read calorie log: " + e.getMessage());
         } catch (Exception e) {
             System.out.println("Please enter valid numbers.");
         }

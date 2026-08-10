@@ -1,6 +1,4 @@
 package akshat;
-
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -8,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 public class CalorieLogReader {
     private static final Path LOG_FILE = Path.of("calorie-log.json");
     private static final Pattern ENTRY_PATTERN = Pattern.compile(
@@ -21,27 +18,35 @@ public class CalorieLogReader {
             Pattern.DOTALL
     );
 
-    public CalorieLogEntry[] loadEntries() throws IOException {
+    public CalorieLogEntry[] loadEntries() throws CalorieLogException {
         if (!Files.exists(LOG_FILE)) {
             return new CalorieLogEntry[0];
         }
 
-        String content = Files.readString(LOG_FILE, StandardCharsets.UTF_8);
-        Matcher matcher = ENTRY_PATTERN.matcher(content);
-        List<CalorieLogEntry> entries = new ArrayList<>();
+        try {
+            String content = Files.readString(LOG_FILE, StandardCharsets.UTF_8);
+            Matcher matcher = ENTRY_PATTERN.matcher(content);
+            List<CalorieLogEntry> entries = new ArrayList<>();
 
-        while (matcher.find()) {
-            entries.add(new CalorieLogEntry(
-                    matcher.group(1),
-                    matcher.group(2),
-                    Double.parseDouble(matcher.group(3)),
-                    Double.parseDouble(matcher.group(4)),
-                    Double.parseDouble(matcher.group(5)),
-                    Double.parseDouble(matcher.group(6))
-            ));
+            while (matcher.find()) {
+                try {
+                    entries.add(new CalorieLogEntry(
+                            matcher.group(1),
+                            matcher.group(2),
+                            Double.parseDouble(matcher.group(3)),
+                            Double.parseDouble(matcher.group(4)),
+                            Double.parseDouble(matcher.group(5)),
+                            Double.parseDouble(matcher.group(6))
+                    ));
+                } catch (NumberFormatException nfe) {
+                    // skip malformed numeric entry
+                }
+            }
+
+            return entries.toArray(new CalorieLogEntry[0]);
+        } catch (java.io.IOException e) {
+            throw new CalorieLogException("Failed to read calorie log file", e);
         }
-
-        return entries.toArray(new CalorieLogEntry[0]);
     }
 
     public static class CalorieLogEntry {
