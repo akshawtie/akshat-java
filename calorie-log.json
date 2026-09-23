@@ -1,26 +1,50 @@
 [
-{
-  "date": "2026-06-29",
-  "name": "fswhgsg",
-  "carbs": 45.00,
-  "protein": 78.00,
-  "fats": 78.00,
-  "totalCalories": 1194.00
-},
-{
-  "date": "2026-07-20",
-  "name": "akshat",
-  "carbs": 464.00,
-  "protein": 489.00,
-  "fats": 77.00,
-  "totalCalories": 4505.00
-},
-{
-  "date": "2026-08-10",
-  "name": "akshat",
-  "carbs": 45.00,
-  "protein": 789.00,
-  "fats": 78.00,
-  "totalCalories": 4038.00
-}
+  {
+    "date": "2026-06-29",
+    "name": "fswhgsg",
+    "carbs": 45.0,
+    "protein": 78.0,
+    "fats": 78.0,
+    "totalCalories": 1194.0
+  },
+  {
+    "date": "2026-07-20",
+    "name": "akshat",
+    "carbs": 464.0,
+    "protein": 489.0,
+    "fats": 77.0,
+    "totalCalories": 4505.0
+  },
+  {
+    "date": "2026-08-10",
+    "name": "akshat",
+    "carbs": 45.0,
+    "protein": 789.0,
+    "fats": 78.0,
+    "totalCalories": 4038.0
+  },
+  {
+    "date": "2026-09-07",
+    "name": "Akshat",
+    "carbs": 45.0,
+    "protein": 45.0,
+    "fats": 45.0,
+    "totalCalories": 765.0
+  },
+  {
+    "date": "2026-09-21",
+    "name": "akshat",
+    "carbs": 45.0,
+    "protein": 85.0,
+    "fats": 40.0,
+    "totalCalories": 880.0
+  },
+  {
+    "date": "2026-09-21",
+    "name": "akshat",
+    "carbs": 89.0,
+    "protein": 90.0,
+    "fats": 50.0,
+    "totalCalories": 1166.0
+  }
 ]
